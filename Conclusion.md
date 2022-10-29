@@ -7,7 +7,7 @@
 用到了preSum，此数列可直接将i到j之间某段的数的和，变为`preSum[j] -preSum[i]`的减法运算，尤其在多次使用某段和时，避免用`sum(list[i:j])`,从而减小了空间复杂度.
 
 ## 205、290
-法1：*哈希表*。进行双射对照（可能需要将string或者list转化为dictionary，采用enumerate函数；带空格的长字符串转化为单词list，需用str.split()函数，返回类型为list）。另，字典的in/not in是针对键而非值。
+法1：*哈希表*。进行双射对照（可能需要将string或者list转化为dictionary，采用enumerate函数；带空格的长字符串转化为单词list，需用str.split()函数，返回类型为list）。另，字典的in/not in是针对键而非值。  
 法2: zip函数(迭代序列元素打包）。另外，一一对照的情况下，可采用zip函数简化此流程，再结合set类型的不可重复性来去掉重复项。
 
 #392
