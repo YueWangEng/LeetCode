@@ -52,6 +52,15 @@
 
 法2: 动态规划法，遍历寻找向后最大差值，max_profit = max(price-min_price, max_profit)，min_price = min(price, min_price)，最大利润和最小价格不断记录，不断对比更新。
 
+### 9 Palindrome Number (回文数字)
+法1: 判断是否为回文，只需将变量反转，判断与原值是否相等。
+
+以下为序列的反转方法（数字不是序列，字符串属于序列）:    
+1) 反向读取，`squ_r = squ[::-1]`
+2) 内置函数 `reversed()`，该函数只是读取，不会更改，返回值为类型，需用 `squ_r = ''.join(reversed(squ)`
+3) list内置函数，`list.reverse()`,只适合于list。
+
+
 ### 409 Longest Palindrome (最长回文长度)
 
 法1: 暴力算法。先建立字符与相应出现次数的哈希表；再寻找各字符出现次数和最长回文长度之间的关系，偶数直接加，奇数减一以后再加，最后如出现过奇数，则总体加一。
