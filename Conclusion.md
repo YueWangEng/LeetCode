@@ -1,5 +1,10 @@
 # Conclusion of tests
 
+### 1 Two sum (两数字和)
+法1: 暴力算法，对每个值向后逐个寻找，找到为止，时间复杂度为(n**2)。
+法2: 哈希表。暴力算法的遍历存在重复，采用哈希算法。可将解题思路改为向前找匹配值，已经遍历的部分存入哈希表中，这样时间复杂度为(n).
+  对于字典，`in` `not in`表达式是针对键而非值。
+
 ### 1480 running sum (数组动态和)
 建立前N项和数列preSum.
 
@@ -8,8 +13,8 @@
 
 ### 205、290，Isomorphic String (同构字符串)、Word Pattern (相同规律的单词)
 法1：哈希表。进行双射对照。  
-可能需要将string或者list转化为dictionary，采用`enumerate()`函数；带空格的长字符串转化为单词list，需用`str.split()`函数，返回类型为list。  
-另，字典的`in` / `not in`是针对键而非值。  
+  可能需要将string或者list转化为dictionary，采用`enumerate()`函数；带空格的长字符串转化为单词list，需用`str.split()`函数，返回类型为list。  
+  另，字典的`in` / `not in`是针对键而非值。  
 
 法2: zip函数(迭代序列元素打包）。另外，一一对照的情况下，可采用zip函数简化此流程，再结合set类型的不可重复性来去掉重复项。
 
