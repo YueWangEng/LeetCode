@@ -7,7 +7,7 @@ n= 888897712133
 
 def maxnum(number:int):
 
-    #前期处理，得到数字与相应个数的哈希表，和一个按逆序排列的数字列表
+    #红色文字前期处理，得到数字与相应个数的哈希表，和一个按逆序排列的数字列表
     import collections
     list_n = list(map(int,(str(number))))   #数字转换为数字列表
     if len(list_n) == 0 or len(list_n) == 1:
