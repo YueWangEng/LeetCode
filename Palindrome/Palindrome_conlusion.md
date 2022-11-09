@@ -4,7 +4,7 @@
 LeetCode: 5, 9, 409
 
 ## Distingushing of Palindrome
-### 自定义函数
+### 法1: 自定义函数（优先）
 ```python3
 def palin(s1):
   m=0
@@ -22,7 +22,7 @@ def palin(s1):
           return True                 
 ```
 
-### 反转判断
+### 法2: 反转判断
 以下为序列的反转方法（数字不是序列，字符串属于序列）:
 
 1) 使用-1参数反向读取，`squ_r = squ[::-1]`。例如对于列表ll中，`ll[5:1:-1]`是对于位置5到位置2的元素逆序，也可用遍历`for i in range(5,1,-1)`实现。  
