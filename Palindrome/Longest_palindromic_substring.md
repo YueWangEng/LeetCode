@@ -37,3 +37,33 @@ def longestPalindrome(self, s: str) -> str:
 
 ### 法2: 哈希表（枚举法）
 
+```python3
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+ 
+        D = dict()      # 储存之前出现过的字符串的序列
+        max_len = 0     # 初始化 回文串的长度
+        num = s[0]   # 初始化 回文串
+
+        for i, s1 in enumerate(s):
+            if s1 in D:
+                # 记录字符出现的索引
+                D[s1] += [i]
+                # 遍历字符s出现的索引
+                for j in D[s1]:
+                    # 判断字符s的 j 索引和 i+1 索引之间的字符串是不是回文
+                    if s[j:i+1] == s[j:i+1][::-1]:
+                        a = s[j:i+1]
+                        # 首次满足的长度最大
+                        break
+
+                # 判断当前回文的长度和已知的长度比较 大的话更新 max_len 和 num
+                if i+1 - j > max_len:
+                    max_len = i+1 - j
+                    num = a
+            else:
+                # 添加字符出现的索引
+                D[s1] = [i]
+
+        return num
+```
