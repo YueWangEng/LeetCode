@@ -1,5 +1,5 @@
 ### 法1: 暴力算法（会超时）
-判断每一个出现的子串，找到最大的。
+双层遍历，判断每一个出现的子串，找到最大的。
 
 ```python3
 class Solution:
@@ -87,7 +87,7 @@ for i, s1 in enumerate(s):
 ```
 
 ### 法3: 中心扩展法
-
+可进行两次遍历，一次寻找最大奇数回文，一次寻找最大偶数回文，然后再取两者最大。
 ```python
 def longestPalindrome(self, s: str) -> str:
         def palin(s1):
