@@ -76,11 +76,11 @@ for i, s1 in enumerate(s):
             # 判断字符s的 j 索引和 i+1 索引之间的字符串是不是回文
             if s[j:i+1] == s[j:i+1][::-1]:
                 a = s[j:i+1]
-                if i+1 - j > max_len:
+                if i+1 - j > max_len:   # 即刻判断是否为最长回文
                     max_len = i+1 - j
                     num = a
                 break
-        D[s1] += [i]
+        D[s1] += [i]    #判断以后再加入，否则，在前面都不是回文时，则会出现s[i:i+1]这种单字符情况。
     else:
         # 添加字符出现的索引
         D[s1] = [i]
