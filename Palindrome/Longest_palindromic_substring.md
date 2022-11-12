@@ -67,3 +67,21 @@ class Solution:
 
         return num
 ```
+以上代码可进行部分改进, 由于新加入的字符位置不需要参与遍历判断，可以先遍历判断再加入。
+```python3
+for i, s1 in enumerate(s):
+    if s1 in D:
+        # 遍历字符s出现的索引
+        for j in D[s1]:
+            # 判断字符s的 j 索引和 i+1 索引之间的字符串是不是回文
+            if s[j:i+1] == s[j:i+1][::-1]:
+                a = s[j:i+1]
+                if i+1 - j > max_len:
+                    max_len = i+1 - j
+                    num = a
+                break
+        D[s1] += [i]
+    else:
+        # 添加字符出现的索引
+        D[s1] = [i]
+```
