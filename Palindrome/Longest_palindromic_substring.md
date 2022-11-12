@@ -114,3 +114,5 @@ def longestPalindrome(self, s: str) -> str:
                         sn = s[i-k+1: i+k]
             return sn
 ```
+### 法4: 动态规划法
+寻找状态转移方程
