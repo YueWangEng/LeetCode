@@ -1,4 +1,5 @@
 ### 法1: 暴力算法（会超时）
+判断每一个出现的子串，找到最大的。
 
 ```python3
 class Solution:
@@ -26,7 +27,7 @@ def longestPalindrome(self, s: str) -> str:
         else:
             for i in range (n-1,0,-1):
                 for j in range(n-i):
-                    sn = s[j:i+j+1] #按子串长度从大到小查找
+                    sn = s[j:i+j+1] #按子串长度从大到小查找，较前一种算法，一旦找到长的子串，就立刻退出，不再寻找短的子串。能解决大部分，但依然会超时。
                     if sn == sn[::-1]:
                         return sn
             else:
@@ -34,4 +35,5 @@ def longestPalindrome(self, s: str) -> str:
 ```
 
 
-### 法2: 中心扩展法 
+### 法2: 哈希表（枚举法）
+
