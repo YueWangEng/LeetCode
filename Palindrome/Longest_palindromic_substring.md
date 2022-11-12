@@ -85,3 +85,32 @@ for i, s1 in enumerate(s):
         # 添加字符出现的索引
         D[s1] = [i]
 ```
+
+### 法3: 中心扩展法
+
+```python
+def longestPalindrome(self, s: str) -> str:
+        def palin(s1):
+            pass
+        if len(s) == 0 or len(s) == 1:
+            return s
+        else:
+            length = 1
+            sn = s[0]
+            #分奇偶两种形式，奇数单字符向外扩展，偶数双字符向外扩展，可分别进行一次，选取最大的。
+            for i in range(len(s)-1):   #偶数情况
+                    m = 0
+                    while (i >= m) and (i+1+m <len(s)) and (s[i-m] == s[i+1+m]):    #如果s[i] == s[i+1]，则此次开始扩展，直到遇到边界或者两端不相等为止。
+                        m += 1
+                    if 2*m > length:
+                        length = 2*m
+                        sn = s[i-m+1: i+1+m]
+            for i in range (len(s) -1): #奇数情况
+                    k = 1
+                    while (i >= k) and (i+k <len(s)) and (s[i-k] == s[i+k]):    #单字符开始扩展，直到遇到边界或者两端不相等为止。
+                        k += 1
+                    if 2*k-1 > length:
+                        length = 2*k - 1
+                        sn = s[i-k+1: i+k]
+            return sn
+```
